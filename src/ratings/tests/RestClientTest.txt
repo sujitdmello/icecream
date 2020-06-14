@@ -1,3 +1,4 @@
+// Localhost - Create rating
 POST http://localhost:7071/api/CreateRating HTTP/1.1
 content-type: application/json
 
@@ -8,3 +9,21 @@ content-type: application/json
   "rating": 4,
   "userNotes": "Lots of cream!!"
 }
+
+// Azure Function - Create Rating
+POST https://sujit-oh.azurewebsites.net/api/CreateRating?code=rGbGXvNsfE4J3RHKUAamopHyBoSIKBQ/m8ptE19ambASX3vTLtPL1Q== HTTP/1.1
+content-type: application/json
+
+{
+  "userId": "cc20a6fb-a91f-4192-874d-132493685376",
+  "productId": "4c25613a-a3c2-4ef3-8e02-9c335eb23204",
+  "locationName": "Sample ice cream shop",
+  "rating": 4,
+  "userNotes": "Lots of cream!!"
+}
+
+// Azure Function - Get Rating by ratingId 
+GET https://sujit-oh.azurewebsites.net/api/GetRating/42700055-80f8-4158-9521-7d46d136296e?code=SaMERsnNBL5O2x8aVeeK7qmZCYfwzxanNi7MC5SZg3SBcdmhGZmbIQ==
+
+// Azure Function - Get Ratings by userId
+GET https://sujit-oh.azurewebsites.net/api/GetRatings/ed414804-ed3d-4ec3-a283-f94ee86f3e23?code=434Mvcs3LdmTWd6CymVdVPz4BDeknFIiZTRBCzDN8sYCcIrQsKIS1g==
