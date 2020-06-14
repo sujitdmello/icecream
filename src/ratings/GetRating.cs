@@ -30,7 +30,7 @@ namespace ratings
             {
                 return new NotFoundResult();
             }
-
+            await Task.Delay(0);
             return new OkObjectResult(document);
         }
     }

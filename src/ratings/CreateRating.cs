@@ -44,7 +44,6 @@ namespace ratings
             {
                 return new BadRequestObjectResult(e.InnerException.Message);
             }
-            log.LogInformation("Step 4");            
             try
             {
                 r = httpClient.GetStringAsync(UserServiceUrl + "?userId=" + data.userId).Result;
@@ -54,7 +53,6 @@ namespace ratings
             {
                 return new BadRequestObjectResult(e.InnerException.Message);
             }
-            log.LogInformation("Step 5");            
             document = new {userId = data.userId, productId = data.productId, locationName = data.locationName, rating = data.rating, timestamp = DateTime.UtcNow, id = Guid.NewGuid(), userNotes = data.userNotes };
             return new OkObjectResult(document);
         }

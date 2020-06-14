@@ -24,13 +24,13 @@ namespace ratings
                 IEnumerable<RatingEntity> document,                
             ILogger log)
         {
-            log.LogInformation("C# HTTP trigger function processed a request.");
+            log.LogInformation("C# HTTP trigger function GetRatings processed a request.");
 
             if (document == null)
             {
                 return new NotFoundResult();
             }
-
+            await Task.Delay(0);
             return new OkObjectResult(document);
         }
     }
